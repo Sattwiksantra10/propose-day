@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    flex-direction: column;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+.envelope {
+    width: 250px;
+    height: 150px;
+    background: white;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(255, 0, 0, 0.3);
+    transition: transform 0.5s ease-in-out;
+}
+
+.flap {
+    width: 0;
+    height: 0;
+    border-left: 125px solid transparent;
+    border-right: 125px solid transparent;
+    border-bottom: 80px solid white;
+    position: absolute;
+    top: -80px;
+    left: 0;
+    transform-origin: top;
+    transition: transform 0.5s ease-in-out;
+}
+
+.heart {
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    border-radius: 50%;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -20px;
+    left: 0;
+}
+
+.heart::after {
+    left: 20px;
+    top: 0;
+}
+
+.click-text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+}
+
+.letter {
+    display: none;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+    color: white;
+    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+    }
+    to {
+        text-shadow: 0 0 20px pink, 0 0 30px pink, 0 0 40px pink;
+    }
+}
+
+.textCont {
+    white-space: pre-wrap;
+}
